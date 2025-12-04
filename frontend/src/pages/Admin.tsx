@@ -16,7 +16,7 @@ import {
   Upload,
   Image as ImageIcon,
 } from 'lucide-react';
-import { defaultProductImage } from '@/utils/images';
+import { getImageUrl } from '@/utils/images';
 
 const categories = ['vitamins', 'supplements', 'aromatherapy'];
 const ageGroups = ['toddler', 'child', 'teen', 'adult', 'elderly', 'all'];
@@ -211,15 +211,6 @@ export default function Admin() {
     });
   };
 
-  // Helper to get the full image URL for display
-  const getImageUrl = (imageUrl: string) => {
-    if (!imageUrl) return defaultProductImage;
-    // If it's an API path, prepend the backend URL
-    if (imageUrl.startsWith('/api/')) {
-      return `http://localhost:9090${imageUrl}`;
-    }
-    return imageUrl;
-  };
 
   if (authLoading || !isAdmin) {
     return (
