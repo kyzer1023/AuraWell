@@ -1,0 +1,116 @@
+# ================================
+# IDE & Editor Files
+# ================================
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ================================
+# OS Generated Files
+# ================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ================================
+# Backend - Java/Maven
+# ================================
+backend/target/
+backend/*.jar
+backend/*.war
+backend/*.class
+
+# Maven wrapper (if not using)
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# Logs
+backend/*.log
+backend/logs/
+
+
+# Data files
+# backend/src/main/resources/data/products.json
+# backend/src/main/resources/data/users.json
+backend/src/main/resources/data/carts.json
+backend/src/main/resources/data/orders.json
+
+# Uploaded images (user-generated content)
+# backend/uploads/
+
+# ================================
+# Frontend - Node.js/Vite/React
+# ================================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.cache/
+
+# Bun
+frontend/bun.lockb
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+
+# Local env files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Vite
+frontend/vite.config.ts.timestamp-*
+
+# ================================
+# General
+# ================================
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# ================================
+# Testing
+# ================================
+coverage/
+*.lcov
+.nyc_output/
+
+# ================================
+# Misc
+# ================================
+*.pid
+*.seed
+*.pid.lock
+

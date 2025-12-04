@@ -1,0 +1,90 @@
+[
+  {
+    "id": "169cd55c-6a61-473e-8b2e-c509e379fad2",
+    "name": "Vitamin D3 1000IU",
+    "description": "Essential vitamin for bone health and immune support. Perfect for daily supplementation.",
+    "price": 24.99,
+    "stock": 100,
+    "category": "vitamins",
+    "ageGroup": "adult",
+    "imageUrl": "/api/images/vitamin-d3.jpg",
+    "createdAt": 1764866909457
+  },
+  {
+    "id": "97802376-0a0d-42d1-880f-4e7321351066",
+    "name": "Kids Multivitamin Gummies",
+    "description": "Delicious fruit-flavored gummies packed with essential vitamins for growing children.",
+    "price": 19.99,
+    "stock": 149,
+    "category": "vitamins",
+    "ageGroup": "child",
+    "imageUrl": "/api/images/kids-multivitamin.jpg",
+    "createdAt": 1764866909457
+  },
+  {
+    "id": "e2dee0e9-b7d0-4120-b2f2-9ba10dc46633",
+    "name": "Omega-3 Fish Oil",
+    "description": "High-quality fish oil supplement for heart and brain health.",
+    "price": 29.99,
+    "stock": 80,
+    "category": "supplements",
+    "ageGroup": "adult",
+    "imageUrl": "/api/images/omega-3-fish-oil.jpg",
+    "createdAt": 1764866909457
+  },
+  {
+    "id": "eb02448a-74e6-434e-988b-bc1b1de91116",
+    "name": "Lavender Essential Oil",
+    "description": "Pure lavender oil for relaxation and better sleep. Perfect for aromatherapy diffusers.",
+    "price": 18.99,
+    "stock": 60,
+    "category": "aromatherapy",
+    "ageGroup": "all",
+    "imageUrl": "/api/images/lavender-oil.jpg",
+    "createdAt": 1764866909457
+  },
+  {
+    "id": "b2f5de16-63c5-4e58-892d-4d892f1f3107",
+    "name": "Senior Calcium Plus",
+    "description": "Calcium and Vitamin D formula designed for elderly bone health.",
+    "price": 34.99,
+    "stock": 70,
+    "category": "supplements",
+    "ageGroup": "elderly",
+    "imageUrl": "/api/images/senior-calcium.jpg",
+    "createdAt": 1764866909457
+  },
+  {
+    "id": "c5e8e268-03d2-452f-b206-7dfc988ca6c5",
+    "name": "Baby Vitamin Drops",
+    "description": "Gentle vitamin drops formulated for infants and toddlers.",
+    "price": 22.99,
+    "stock": 90,
+    "category": "vitamins",
+    "ageGroup": "toddler",
+    "imageUrl": "/api/images/baby-vitamin-drops.jpg",
+    "createdAt": 1764866909457
+  },
+  {
+    "id": "a1e6a48a-cb7c-443f-a60f-cb36a9785844",
+    "name": "Eucalyptus Oil Blend",
+    "description": "Refreshing eucalyptus blend for respiratory support and mental clarity.",
+    "price": 15.99,
+    "stock": 45,
+    "category": "aromatherapy",
+    "ageGroup": "all",
+    "imageUrl": "/api/images/eucalyptus-oil.webp",
+    "createdAt": 1764866909457
+  },
+  {
+    "id": "11678021-a493-41fc-b751-a809203d135b",
+    "name": "Protein Powder - Vanilla",
+    "description": "Plant-based protein powder for muscle recovery and daily nutrition.",
+    "price": 44.99,
+    "stock": 55,
+    "category": "supplements",
+    "ageGroup": "adult",
+    "imageUrl": "/api/images/protein-powder.jpg",
+    "createdAt": 1764866909457
+  }
+]

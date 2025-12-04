@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  
+  --color-sage-50: #f6f7f4;
+  --color-sage-100: #e8ebe3;
+  --color-sage-200: #d4dbc9;
+  --color-sage-300: #b5c2a4;
+  --color-sage-400: #93a57d;
+  --color-sage-500: #748a5f;
+  --color-sage-600: #5a6d4a;
+  --color-sage-700: #47563c;
+  --color-sage-800: #3b4633;
+  --color-sage-900: #333c2d;
+  
+  --color-cream-50: #fdfcfa;
+  --color-cream-100: #f9f6f0;
+  --color-cream-200: #f3ede1;
+  --color-cream-300: #e9dfcc;
+  --color-cream-400: #dccdb0;
+  --color-cream-500: #ceb893;
+  
+  --color-terracotta-400: #c4856c;
+  --color-terracotta-500: #b5705a;
+  --color-terracotta-600: #9a5b47;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans bg-cream-50 text-sage-900 antialiased;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-sage-600 text-white font-medium rounded-lg 
+           hover:bg-sage-700 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-sage-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-cream-200 text-sage-800 font-medium rounded-lg
+           hover:bg-cream-300 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-sage-600 text-sage-600 font-medium rounded-lg
+           hover:bg-sage-600 hover:text-white transition-colors duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-cream-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent
+           placeholder:text-sage-400 text-sage-800;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-cream-200 overflow-hidden
+           transition-shadow duration-300 hover:shadow-md;
+  }
+}

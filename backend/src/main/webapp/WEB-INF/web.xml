@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+    version="3.1">
+
+    <!-- CORS Filter -->
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>com.aurawell.api.CorsFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Auth Servlets -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.aurawell.api.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/api/auth/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.aurawell.api.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/api/auth/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.aurawell.api.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/api/auth/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MeServlet</servlet-name>
+        <servlet-class>com.aurawell.api.MeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MeServlet</servlet-name>
+        <url-pattern>/api/auth/me</url-pattern>
+    </servlet-mapping>
+
+    <!-- Product Servlets -->
+    <servlet>
+        <servlet-name>ProductsServlet</servlet-name>
+        <servlet-class>com.aurawell.api.ProductsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductsServlet</servlet-name>
+        <url-pattern>/api/products</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>com.aurawell.api.ProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/api/products/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Cart Servlets -->
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>com.aurawell.api.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/api/cart</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CartItemServlet</servlet-name>
+        <servlet-class>com.aurawell.api.CartItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartItemServlet</servlet-name>
+        <url-pattern>/api/cart/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Order Servlets -->
+    <servlet>
+        <servlet-name>OrdersServlet</servlet-name>
+        <servlet-class>com.aurawell.api.OrdersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrdersServlet</servlet-name>
+        <url-pattern>/api/orders</url-pattern>
+    </servlet-mapping>
+
+    <!-- Admin Servlets -->
+    <servlet>
+        <servlet-name>AdminProductsServlet</servlet-name>
+        <servlet-class>com.aurawell.api.AdminProductsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminProductsServlet</servlet-name>
+        <url-pattern>/api/admin/products</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminProductServlet</servlet-name>
+        <servlet-class>com.aurawell.api.AdminProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminProductServlet</servlet-name>
+        <url-pattern>/api/admin/products/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminOrdersServlet</servlet-name>
+        <servlet-class>com.aurawell.api.AdminOrdersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminOrdersServlet</servlet-name>
+        <url-pattern>/api/admin/orders</url-pattern>
+    </servlet-mapping>
+
+    <!-- Image Upload Servlet -->
+    <servlet>
+        <servlet-name>ImageUploadServlet</servlet-name>
+        <servlet-class>com.aurawell.api.ImageUploadServlet</servlet-class>
+        <multipart-config>
+            <max-file-size>10485760</max-file-size>
+            <max-request-size>15728640</max-request-size>
+            <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageUploadServlet</servlet-name>
+        <url-pattern>/api/upload/image</url-pattern>
+    </servlet-mapping>
+
+    <!-- Image Serving Servlet -->
+    <servlet>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>com.aurawell.api.ImageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/api/images/*</url-pattern>
+    </servlet-mapping>
+</web-app>
+
