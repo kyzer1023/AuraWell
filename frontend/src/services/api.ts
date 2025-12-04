@@ -1,12 +1,5 @@
 const API_BASE_URL = 'http://localhost:9090/api';
 
-interface ApiResponse<T> {
-  success?: boolean;
-  message?: string;
-  error?: string;
-  data?: T;
-}
-
 async function request<T>(
   endpoint: string,
   options: RequestInit = {}
