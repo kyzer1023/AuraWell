@@ -13,11 +13,26 @@ import java.util.*;
 
 public class DataManager {
     private static DataManager instance;
-    private static final String DATA_DIR = "src/main/resources/data/";
-    private static final String USERS_FILE = DATA_DIR + "users.json";
-    private static final String PRODUCTS_FILE = DATA_DIR + "products.json";
-    private static final String CARTS_FILE = DATA_DIR + "carts.json";
-    private static final String ORDERS_FILE = DATA_DIR + "orders.json";
+    
+    // Directory for persistent data storage (writable in production)
+    private static final String DATA_DIR;
+    private static final String USERS_FILE;
+    private static final String PRODUCTS_FILE;
+    private static final String CARTS_FILE;
+    private static final String ORDERS_FILE;
+    
+    static {
+        // Use environment variable or fallback to local path
+        String baseDir = System.getenv("DATA_DIR");
+        if (baseDir == null || baseDir.isEmpty()) {
+            baseDir = System.getProperty("user.dir") + "/data";
+        }
+        DATA_DIR = baseDir + "/";
+        USERS_FILE = DATA_DIR + "users.json";
+        PRODUCTS_FILE = DATA_DIR + "products.json";
+        CARTS_FILE = DATA_DIR + "carts.json";
+        ORDERS_FILE = DATA_DIR + "orders.json";
+    }
 
     private final Gson gson;
     private List<User> users;
@@ -27,7 +42,39 @@ public class DataManager {
 
     private DataManager() {
         gson = new GsonBuilder().setPrettyPrinting().create();
+        initializeDataDirectory();
         loadData();
+    }
+    
+    private void initializeDataDirectory() {
+        try {
+            Files.createDirectories(Paths.get(DATA_DIR));
+            // Copy initial data from classpath if files don't exist
+            copyInitialDataIfNeeded("users.json", USERS_FILE);
+            copyInitialDataIfNeeded("products.json", PRODUCTS_FILE);
+            copyInitialDataIfNeeded("carts.json", CARTS_FILE);
+            copyInitialDataIfNeeded("orders.json", ORDERS_FILE);
+        } catch (IOException e) {
+            System.err.println("Failed to initialize data directory: " + e.getMessage());
+        }
+    }
+    
+    private void copyInitialDataIfNeeded(String resourceName, String targetFile) {
+        File target = new File(targetFile);
+        if (!target.exists()) {
+            try (InputStream is = getClass().getClassLoader().getResourceAsStream("data/" + resourceName)) {
+                if (is != null) {
+                    Files.copy(is, target.toPath());
+                    System.out.println("Initialized " + resourceName + " from classpath");
+                } else {
+                    // Create empty file if no initial data
+                    Files.writeString(target.toPath(), "[]");
+                    System.out.println("Created empty " + resourceName);
+                }
+            } catch (IOException e) {
+                System.err.println("Failed to copy initial data for " + resourceName + ": " + e.getMessage());
+            }
+        }
     }
 
     public static synchronized DataManager getInstance() {
@@ -52,7 +99,6 @@ public class DataManager {
     @SuppressWarnings("unchecked")
     private <T> T loadFromFile(String filename, Type type) {
         try {
-            Files.createDirectories(Paths.get(DATA_DIR));
             File file = new File(filename);
             if (!file.exists()) {
                 return null;
@@ -68,7 +114,6 @@ public class DataManager {
 
     private void saveToFile(String filename, Object data) {
         try {
-            Files.createDirectories(Paths.get(DATA_DIR));
             try (Writer writer = new FileWriter(filename)) {
                 gson.toJson(data, writer);
             }
