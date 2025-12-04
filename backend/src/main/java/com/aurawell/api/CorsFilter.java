@@ -22,7 +22,7 @@ public class CorsFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         System.out.println("\n" + ANSI_GREEN + "╔════════════════════════════════════════════════════════╗");
-        System.out.println("║          AuraWell API Server Started              ║");
+        System.out.println("║          AuraWell API Server Started                   ║");
         System.out.println("║              http://localhost:9090                     ║");
         System.out.println("╚════════════════════════════════════════════════════════╝" + ANSI_RESET + "\n");
     }
@@ -36,7 +36,7 @@ public class CorsFilter implements Filter {
         long startTime = System.currentTimeMillis();
 
         // Set CORS headers
-        httpResponse.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+        httpResponse.setHeader("Access-Control-Allow-Origin", "https://aura-well-two.vercel.app");
         httpResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         httpResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         httpResponse.setHeader("Access-Control-Allow-Credentials", "true");
