@@ -7,7 +7,7 @@
     "stock": 100,
     "category": "vitamins",
     "ageGroup": "adult",
-    "imageUrl": "/api/images/vitamin-d3.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400",
     "createdAt": 1764866909457
   },
   {
@@ -18,7 +18,7 @@
     "stock": 149,
     "category": "vitamins",
     "ageGroup": "child",
-    "imageUrl": "/api/images/kids-multivitamin.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400",
     "createdAt": 1764866909457
   },
   {
@@ -29,7 +29,7 @@
     "stock": 80,
     "category": "supplements",
     "ageGroup": "adult",
-    "imageUrl": "/api/images/omega-3-fish-oil.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1577401239170-897942555fb3?w=400",
     "createdAt": 1764866909457
   },
   {
@@ -40,7 +40,7 @@
     "stock": 60,
     "category": "aromatherapy",
     "ageGroup": "all",
-    "imageUrl": "/api/images/lavender-oil.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400",
     "createdAt": 1764866909457
   },
   {
@@ -51,7 +51,7 @@
     "stock": 70,
     "category": "supplements",
     "ageGroup": "elderly",
-    "imageUrl": "/api/images/senior-calcium.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1550572017-edd951aa8f72?w=400",
     "createdAt": 1764866909457
   },
   {
@@ -62,7 +62,7 @@
     "stock": 90,
     "category": "vitamins",
     "ageGroup": "toddler",
-    "imageUrl": "/api/images/baby-vitamin-drops.png",
+    "imageUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400",
     "createdAt": 1764866909457
   },
   {
@@ -73,7 +73,7 @@
     "stock": 45,
     "category": "aromatherapy",
     "ageGroup": "all",
-    "imageUrl": "/api/images/eucalyptus-oil.webp",
+    "imageUrl": "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=400",
     "createdAt": 1764866909457
   },
   {
@@ -84,7 +84,7 @@
     "stock": 55,
     "category": "supplements",
     "ageGroup": "adult",
-    "imageUrl": "/api/images/protein-powder.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400",
     "createdAt": 1764866909457
   }
 ]
